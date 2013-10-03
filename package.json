@@ -4,7 +4,7 @@
   "description": "saucelabs-spike ===============",
   "main": "index.js",
   "scripts": {
-    "test": "echo TBD"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -14,5 +14,14 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/strongloop/saucelabs-spike/issues"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-saucelabs": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-watch": "*",
+    "mocha": "*",
+    "chai": "*"
   }
 }
