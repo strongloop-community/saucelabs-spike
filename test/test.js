@@ -1,5 +1,6 @@
 describe('dummy', function() {
-  var expect = chai.expect;
+  var expect = global.chai ? global.chai.expect : require('chai').expect;
+
   it('fails', function() {
     expect(true).to.equal(false);
   });

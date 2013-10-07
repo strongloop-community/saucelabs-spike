@@ -44,6 +44,14 @@ module.exports = function(grunt) {
         }
       }
     },
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec'
+        },
+        src: ['test/**/*.js']
+      }
+    },
     watch: {}
   });
 
@@ -53,5 +61,5 @@ module.exports = function(grunt) {
   }
 
   grunt.registerTask("dev", ["connect", "watch"]);
-  grunt.registerTask("test", ["connect", "saucelabs-mocha"]);
+  grunt.registerTask("test", ["mochaTest", "connect", "saucelabs-mocha"]);
 };

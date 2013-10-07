@@ -22,6 +22,7 @@
     "grunt-contrib-connect": "*",
     "grunt-contrib-watch": "*",
     "mocha": "*",
-    "chai": "*"
+    "chai": "*",
+    "grunt-mocha-test": "~0.7.0"
   }
 }
