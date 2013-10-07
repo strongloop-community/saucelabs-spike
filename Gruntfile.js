@@ -61,5 +61,5 @@ module.exports = function(grunt) {
   }
 
   grunt.registerTask("dev", ["connect", "watch"]);
-  grunt.registerTask("test", ["mochaTest", "connect", "saucelabs-mocha"]);
+  grunt.registerTask("test", [/*"mochaTest", */"connect", "saucelabs-mocha"]);
 };
