@@ -52,7 +52,29 @@ module.exports = function(grunt) {
         src: ['test/**/*.js']
       }
     },
+    watchify: {
+      options: {
+        debug: true,
+        callback: function(b) {
+          b.require('./lib/client.js', { expose: '../lib/client' });
+          return b;
+        }
+      },
+      lib: {
+        src: ['./lib/client.js'],
+        dest: './client.js'
+      }
+    },
     watch: {}
+  });
+
+  grunt.registerTask('server', 'Start app server', function() {
+    var done = this.async();
+    var app =require('./lib/app.js');
+    app.start(function(err) {
+      if (err) grunt.log.error(err);
+      done(!err);
+    });
   });
 
   // Loading dependencies
@@ -60,6 +82,6 @@ module.exports = function(grunt) {
     if (key !== "grunt" && key.indexOf("grunt") === 0) grunt.loadNpmTasks(key);
   }
 
-  grunt.registerTask("dev", ["connect", "watch"]);
-  grunt.registerTask("test", [/*"mochaTest", */"connect", "saucelabs-mocha"]);
+  grunt.registerTask("dev", ["server", "watchify", "connect", "watch"]);
+  grunt.registerTask("test", [/*"mochaTest", */"server", "watchify", "connect", "saucelabs-mocha"]);
 };

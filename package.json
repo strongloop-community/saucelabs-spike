@@ -23,6 +23,11 @@
     "grunt-contrib-watch": "*",
     "mocha": "*",
     "chai": "*",
-    "grunt-mocha-test": "~0.7.0"
+    "grunt-mocha-test": "~0.7.0",
+    "grunt-watchify": "~0.1.0"
+  },
+  "dependencies": {
+    "superagent": "git+https://github.com/visionmedia/superagent.git",
+    "connect": "~2.9.0"
   }
 }

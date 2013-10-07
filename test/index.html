@@ -5,11 +5,17 @@
   <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
 </head>
 <body>
+  <script src="../client.js"></script>
+
   <div id="mocha"></div>
   <script src="../node_modules/mocha/mocha.js"></script>
-  <script src="../node_modules/chai/chai.js"></script>
   <script>mocha.setup('bdd')</script>
+
+  <!-- TODO use browserify instead -->
+  <script src="../node_modules/chai/chai.js"></script>
   <script src="test.js"></script>
+  <!-- end of TODO -->
+
   <script>
       onload = function() {
           mocha.checkLeaks();
